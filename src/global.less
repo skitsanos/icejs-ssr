@@ -4,6 +4,8 @@
 @foxxColor1: #ffffff;
 @foxxColor2: #232323;
 @foxxColor3: #fbc23e;
+@foxxColor4: #464b34;
+@foxxColor5: #c3bb74;
 
 html, body {
   margin: 0;
@@ -50,4 +52,46 @@ html, body {
 .header-title {
   font-weight: 600;
   font-size: 1.4em;
+}
+
+.footer {
+  background-color: @foxxColor2;
+  color: @foxxColor1;
+
+  padding: 2em;
+
+  h3 {
+	margin: 0;
+  }
+
+  a {
+	color: @foxxColor3 !important;
+	text-decoration: none;
+
+	&:hover {
+	  color: #ffffff !important;
+	}
+  }
+}
+
+.content {
+  margin-top: 2em;
+
+  article {
+	h1 {
+	  font-weight: 100;
+	  font-size: 3em;
+	  color: @foxxColor4;
+	}
+
+	h2 {
+	  font-weight: 300;
+	  text-transform: uppercase;
+	}
+
+	h3 {
+	  font-weight: 300;
+	  color: @foxxColor5;
+	}
+  }
 }

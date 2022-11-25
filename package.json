@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "ice start --no-open",
+    "dev": "ice start --no-open --force",
     "build": "ice build",
     "dev:server": "node index.mjs",
-    "dev:netlify": "netlify dev"
+    "dev:netlify": "netlify dev --geo mock"
   },
   "dependencies": {
     "@arco-design/web-react": "^2.42.0",

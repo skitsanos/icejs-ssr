@@ -1,12 +1,16 @@
-//https://www.jianshu.com/p/205057e6c16b
+/**
+ * Basic HTTP Server to test Ice.js SSR
+ * @author skitsanos
+ * @version 1.0.0
+ */
 
 import {createReadStream} from 'fs';
 import http from 'http';
 import {extname, join} from 'path';
 
-import {renderToHTML} from './build/server/index.mjs';
+import {renderToHTML} from './dist/server/index.mjs';
 
-const root = join('.', 'build');
+const root = join('.', 'dist');
 const getContentType = {
     '.js': 'text/javascript',
     '.css': 'text/css',
@@ -25,19 +29,7 @@ http.createServer(async (req, res) =>
 
     res.writeHead(200, header);
 
-    if (!ext)
-    {
-        console.log(req.url);
-        // url render
-        const context = {};
-        const {value} = await renderToHTML({
-            req,
-            context
-        });
-        res.write(value);
-        res.end();
-    }
-    else
+    if (ext)
     {
         // static file url
         const path = join(root, req.url);
@@ -50,6 +42,16 @@ http.createServer(async (req, res) =>
             res.end();
         });
         stream.pipe(res);
+    }
+    else
+    {
+        console.log(req.url);
+        // url render
+        const {value} = await renderToHTML({
+            req
+        });
+        res.write(value);
+        res.end();
     }
 
 }).listen(3000);

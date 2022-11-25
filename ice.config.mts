@@ -5,19 +5,23 @@ export default defineConfig(() => ({
 
     ssr: true,
 
-    polyfill: false,
+    splitChunks: false,
+
+    hash: false,
+
+    dataLoader: true,
 
     syntaxFeatures: {
         exportDefaultFrom: true
     },
-    transform: (code, id) =>
-    {
-        if (id.includes('src/pages') && id.endsWith('.js'))
-        {
-            return code;
-        }
-        return null;
-    },
+    /* transform: (code, id) =>
+     {
+         if (id.includes('src/pages') && id.endsWith('.js'))
+         {
+             return code;
+         }
+         return null;
+     },*/
     /*    webpack: (webpackConfig) =>
         {
             if (process.env.NODE_ENV !== 'test')
