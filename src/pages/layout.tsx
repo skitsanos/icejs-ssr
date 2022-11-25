@@ -2,7 +2,7 @@ import {Outlet} from 'ice';
 import {Button, Layout} from '@arco-design/web-react';
 import Header from '@/components/Header';
 
-export default ({children}) =>
+export default () =>
 {
 
     return <Layout>
