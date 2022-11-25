@@ -3,16 +3,18 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "ice start",
+    "dev": "ice start --no-open",
     "build": "ice build",
-    "dev:server": "node index.mjs"
+    "dev:server": "node index.mjs",
+    "dev:netlify": "netlify dev"
   },
   "dependencies": {
+    "@arco-design/web-react": "^2.42.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@ice/runtime": "^1.0.0",
-    "@ice/app": "^3.0.0"
+    "@ice/app": "^3.0.0",
+    "@ice/runtime": "^1.0.0"
   }
 }

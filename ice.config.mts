@@ -1,6 +1,12 @@
 import {defineConfig} from '@ice/app';
 
 export default defineConfig(() => ({
+    outputDir: 'dist',
+
+    ssr: true,
+
+    polyfill: false,
+
     syntaxFeatures: {
         exportDefaultFrom: true
     },
@@ -12,14 +18,14 @@ export default defineConfig(() => ({
         }
         return null;
     },
-    webpack: (webpackConfig) =>
-    {
-        if (process.env.NODE_ENV !== 'test')
+    /*    webpack: (webpackConfig) =>
         {
-            //webpackConfig.plugins?.push(new SpeedMeasurePlugin());
-        }
-        return webpackConfig;
-    },
+            if (process.env.NODE_ENV !== 'test')
+            {
+                //webpackConfig.plugins?.push(new SpeedMeasurePlugin());
+            }
+            return webpackConfig;
+        },*/
     dropLogLevel: 'warn'
 
 }));
