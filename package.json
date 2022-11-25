@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "ice start",
-    "build": "ice build"
+    "build": "ice build",
+    "dev:server": "node index.mjs"
   },
   "dependencies": {
     "react": "^18.2.0",
