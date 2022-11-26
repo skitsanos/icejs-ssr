@@ -4,32 +4,15 @@ export default defineConfig(() => ({
     outputDir: 'dist',
 
     ssr: true,
+    ssg: false,
 
     splitChunks: false,
 
     hash: false,
 
-    dataLoader: true,
-
     syntaxFeatures: {
         exportDefaultFrom: true
     },
-    /* transform: (code, id) =>
-     {
-         if (id.includes('src/pages') && id.endsWith('.js'))
-         {
-             return code;
-         }
-         return null;
-     },*/
-    /*    webpack: (webpackConfig) =>
-        {
-            if (process.env.NODE_ENV !== 'test')
-            {
-                //webpackConfig.plugins?.push(new SpeedMeasurePlugin());
-            }
-            return webpackConfig;
-        },*/
-    dropLogLevel: 'warn'
 
+    dropLogLevel: 'warn'
 }));

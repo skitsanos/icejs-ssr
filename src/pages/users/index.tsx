@@ -1,11 +1,13 @@
-import {defineServerDataLoader, useData} from 'ice';
+import {defineDataLoader, useData} from 'ice';
 
-export const serverDataLoader = defineServerDataLoader(async () =>
+export const dataLoader = defineDataLoader(async () =>
 {
+    const apiResponse = await fetch('https://api.skitsanos.com/api/utils/headers');
+
     return Promise.resolve({
         server: true,
-        debug: 'yes'
-        //data
+        debug: 'yes',
+        data: await apiResponse.json()
     });
 });
 
